@@ -139,12 +139,13 @@
         font-weight: 700;
       }
 
-      /* Navbar brand — display font */
+      /* Navbar brand — display font, override neumorphism uppercase */
       .navbar-brand {
         font-family: var(--font-display);
         font-weight: 700;
-        letter-spacing: -0.02em;
-        font-size: 1.125rem;
+        letter-spacing: -0.03em;
+        font-size: 1.25rem;
+        text-transform: none;
       }
 
       /* Footer text */
@@ -159,10 +160,16 @@
         text-transform: uppercase;
       }
 
+      /* Override .section-lg: neumorphism define 8rem, lo reducimos */
+      .section-lg {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+      }
+
       /* Hero: fluid padding responsive */
       .hero-section {
-        padding-top: clamp(5rem, 10vw, 11rem);
-        padding-bottom: clamp(3rem, 6vw, 5rem);
+        padding-top: clamp(4rem, 8vw, 8rem);
+        padding-bottom: clamp(2rem, 4vw, 3.5rem);
       }
 
       /* Feature list: horizontal numbered items */
@@ -174,9 +181,9 @@
 
       .feature-list-item {
         display: flex;
-        gap: 1.75rem;
+        gap: 1.5rem;
         align-items: flex-start;
-        padding: 2rem 0;
+        padding: 1.25rem 0;
         border-bottom: 1px solid rgba(0, 0, 0, 0.06);
       }
 
@@ -259,6 +266,9 @@
       }
       .hero-section .btn-lg {
         animation: cs-fade-up 0.65s var(--ease-out-expo) 0.36s both;
+      }
+      .hero-section .hero-trust-note {
+        animation: cs-fade-up 0.55s var(--ease-out-quart) 0.50s both;
       }
 
       /* Scroll-reveal base */
@@ -365,8 +375,8 @@
             <a
               href="https://candy-store.app/login"
               target="_blank"
-              class="btn btn-secondary mr-2"
-              >Acceder</a
+              class="btn btn-soft mr-2"
+              >Iniciar sesión</a
             >
             <a
               href="https://candy-store.app/register"
@@ -467,8 +477,8 @@
       <section class="section section-lg pb-0">
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-12 col-lg-8 text-center reveal">
-              <div class="card bg-soft shadow-soft border-light p-5">
+            <div class="col-12 col-lg-9 text-center reveal">
+              <div class="card bg-soft shadow-soft border-light p-4">
                 <div class="card-body">
                   <h2 class="h2 mb-3">Precio por seat. Sin sorpresas.</h2>
                   <p class="lead text-gray mb-2">
@@ -494,7 +504,7 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-12 col-lg-10 reveal">
-              <div class="card bg-primary shadow-soft border-light px-5 py-5 mb-6">
+              <div class="card bg-primary shadow-soft border-light px-4 py-4 mb-5">
                 <div class="cta-card-body">
                   <div class="cta-card-text">
                     <h2 class="mb-3">¿Listo para simplificar tu operación?</h2>
@@ -530,7 +540,7 @@
                 />
               </div>
             </div>
-            <div class="col-md-6 col-xl-5 text-center text-md-left reveal" data-delay="1">
+            <div class="col-md-6 col-xl-6 text-center text-md-left reveal" data-delay="1">
               <h2 class="h1 mb-4">Tu equipo, tus búsquedas, una sola vista.</h2>
               <p class="lead">
                 Candy Store nació para agencias que manejan 10 o más búsquedas simultáneas
@@ -550,7 +560,7 @@
           <div class="row justify-content-center">
             <div class="col-12 col-lg-10 reveal">
               <div class="card bg-primary shadow-soft border-light mb-6">
-                <div class="card-body px-5 py-5">
+                <div class="card-body px-4 py-4">
                   <div class="cta-card-body">
                     <div class="cta-card-text">
                       <h2 class="mb-2">¿Querés ver el producto antes de registrarte?</h2>
@@ -576,7 +586,7 @@
     <footer class="d-flex pb-5 pt-6 pt-md-7 border-top border-light bg-primary">
       <div class="container">
         <div class="row">
-          <div class="col-lg-4">
+          <div class="col-lg-4 footer-brand-col">
             <p>
               <strong>Candy Store</strong> es el ATS diseñado para agencias de reclutamiento medianas.
               Coordiná candidatos, requisiciones y entrevistas desde un solo lugar.
@@ -598,7 +608,7 @@
                   class="p-2"
                   target="_blank"
                   href="https://candy-store.app/login"
-                  >Acceder</a
+                  >Iniciar sesión</a
                 >
               </li>
               <li>
