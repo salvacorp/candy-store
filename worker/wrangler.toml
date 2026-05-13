@@ -1,0 +1,8 @@
+name = "candy-store-wildcard"
+main = "worker.js"
+compatibility_date = "2026-05-13"
+
+routes = [
+  { pattern = "*.candy-store.app/*", zone_name = "candy-store.app" },
+  { pattern = "*.candy-store.app", zone_name = "candy-store.app" }
+]
