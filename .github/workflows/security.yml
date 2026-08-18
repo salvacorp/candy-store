@@ -21,9 +21,12 @@ jobs:
           fetch-depth: 0
 
       - name: Install gitleaks
+        env:
+          # Pinned for reproducibility and to avoid an unauthenticated GitHub API
+          # call (60 req/hr per IP → flaky on shared runners). Bump deliberately.
+          GITLEAKS_VERSION: 8.30.1
         run: |
-          VERSION=$(curl -s https://api.github.com/repos/gitleaks/gitleaks/releases/latest | grep '"tag_name"' | cut -d'"' -f4 | tr -d 'v')
-          curl -sSfL "https://github.com/gitleaks/gitleaks/releases/download/v${VERSION}/gitleaks_${VERSION}_linux_x64.tar.gz" | tar -xz
+          curl -sSfL "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" | tar -xz
           sudo mv gitleaks /usr/local/bin/
 
       - name: Run gitleaks
