@@ -15,6 +15,7 @@ jobs:
     name: Secret scan (gitleaks)
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    if: github.actor != 'dependabot[bot]'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -25,6 +26,10 @@ jobs:
           # Pinned for reproducibility and to avoid an unauthenticated GitHub API
           # call (60 req/hr per IP → flaky on shared runners). Bump deliberately.
           GITLEAKS_VERSION: 8.30.1
+        # Explicit `shell: bash` runs with -eo pipefail. The runner default is
+        # `bash -e` only, which swallows a curl failure at the pipe and surfaces
+        # it later as a confusing `mv: cannot stat 'gitleaks'`.
+        shell: bash
         run: |
           curl -sSfL "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" | tar -xz
           sudo mv gitleaks /usr/local/bin/
