@@ -40,7 +40,8 @@ No aplica.
 - [x] 1. Actualizar los 6 hrefs de `index.html` a `admin.candy-store.app`
 - [x] 2. Eliminar `login-link.html` y `ui-system.html`
 - [x] 3. Agregar job `link-check` (grep) a `.github/workflows/lighthouse.yml`
-- [x] 4. Verificar localmente: grep de regresión en 0 (scope `*.html` y whole-repo), YAML del workflow válido, dry-run del job pasa limpio, curl server-side confirma los 6 hrefs correctos. **Pendiente**: verificación visual desktop/mobile — Playwright MCP no conectó esta sesión (`CONNECTION_CLOSED`) y no hay otra herramienta de browser cargada; falta correrla manualmente o retomarla en otra sesión con el MCP disponible.
+- [x] 4. Verificar localmente: grep de regresión en 0 (scope `*.html` y whole-repo), YAML del workflow válido, dry-run del job pasa limpio, curl server-side confirma los 6 hrefs correctos.
+- [x] 5. Verificación visual desktop (1440×900) y mobile (390×844) con Playwright, contra el working tree servido en local (no contra `https://candy-store.app`: prod todavía sirve los links viejos porque el PR no está mergeado). Resultado: los 6 CTAs apuntan a `admin.candy-store.app`, 0 links viejos, 0 Cognito; ambos destinos responden 200. Evidencia en `~/.cache/pr-evidence/ATS-96/`.
 
 ## Risks
 

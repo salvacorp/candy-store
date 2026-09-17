@@ -13,4 +13,13 @@
 - **Gotcha de `git rm` pre-staged** → agregado a `~/src/salva/claude-flow/commands/ship.md` (paso 4): correr `git status --short` después de cada `git add` dirigido y antes de cada commit.
 - **`## Commands` de candy-store** → creado `src/candy-store/CLAUDE.md` (no existía): sin lint/test/build, HTML estático puro, servidor local con `python3 -m http.server`.
 - Documentación viva del flujo (`flujo-desarrollo.html`) no se tocó: ambos cambios son detalles tácticos dentro de pasos ya documentados a esa altura, no cambian la forma del flujo.
-- PR: [candy-store#14](https://github.com/salvacorp/candy-store/pull/14). CI (link-check, lighthouse, gitleaks) pasó en verde. Verificación visual desktop/mobile (AC #4) queda pendiente — Playwright MCP no conectó esta sesión.
+- PR: [candy-store#14](https://github.com/salvacorp/candy-store/pull/14). CI (link-check, lighthouse, gitleaks) pasó en verde.
+
+## Verificación visual (AC #4) — 2026-09-17
+
+- [verify] Causa del `CONNECTION_CLOSED` de Playwright MCP: el `node` en PATH era v18.17.0 y `@playwright/mcp` usa `net.getDefaultAutoSelectFamilyAttemptTimeout`, que existe recién en Node 20+. Se corrigió con `nvm alias default 22.22.2`. Gotcha: relanzar `claude` desde la misma pestaña de terminal no alcanza — el proceso hereda el PATH viejo; hay que hacer `nvm use default` o abrir una pestaña nueva.
+- [verify] Se verificó contra el working tree servido en local (`python3 -m http.server`), no contra `https://candy-store.app` como decía el plan: prod sigue sirviendo los links viejos porque el PR no está mergeado. El PR tampoco tiene preview de Cloudflare.
+- [verify] Resultado: los 6 CTAs (2× `/login`, 4× `/register`) apuntan a `admin.candy-store.app`; 0 matches de `candy-store.app/(login|register)` y 0 de `cognito` en el DOM. Ambos destinos responden 200. El footer —donde se habían encadenado los typos de `</a>`— renderiza sus 3 links sanos.
+- [verify] Falso positivo descartado: el screenshot `fullPage` en mobile mostraba un hueco en blanco de ~1500px entre features y footer. Es artefacto de captura, no regresión — todas las secciones tienen `opacity: 1`, `visibility: visible` y altura real, y el screenshot del viewport scrolleado las muestra bien. Lección: en mobile, validar con captura de viewport además de `fullPage`.
+- [verify] En mobile el "Iniciar sesión" del header está `display: none` por media query (el del footer sí se ve, login sigue alcanzable). Es preexistente, no lo introdujo el ticket: el diff de `index.html` vs `main` son exactamente los 6 `href`, sin tocar markup ni clases.
+- Evidencia: `~/.cache/pr-evidence/ATS-96/candy-store-20260917-{desktop-1440,mobile-390,mobile-pricing-viewport}.png`.
