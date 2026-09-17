@@ -10,6 +10,26 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  link-check:
+    name: Check landing auth links
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fail on stale login/register or Cognito links
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-files -z '*.html' | xargs -0 grep -lE 'https://candy-store\.app/(login|register)'; then
+            echo "Found a link to the public candy-store.app login/register route — it must point to admin.candy-store.app instead." >&2
+            exit 1
+          fi
+          if git ls-files -z '*.html' | xargs -0 grep -liE 'cognito'; then
+            echo "Found a public reference to Cognito in tracked HTML." >&2
+            exit 1
+          fi
+
   lighthouse:
     name: Lighthouse audit
     runs-on: ubuntu-latest
