@@ -2,526 +2,97 @@
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Candy Store - ATS para Agencias de Reclutamiento</title>
-    <meta name="title" content="Candy Store - ATS para Agencias de Reclutamiento" />
+    <title>Candy Store — ATS para agencias de reclutamiento</title>
+    <meta name="title" content="Candy Store — ATS para agencias de reclutamiento" />
     <meta
       name="description"
-      content="Simplifica la coordinación de candidatos y entrevistas. ATS diseñado para agencias medianas de reclutamiento (5-30 recruiters). Gestioná requisiciones, candidatos e interviews en un solo lugar."
+      content="El ATS para agencias de reclutamiento medianas (5–30 recruiters). Coordiná búsquedas, candidatos, entrevistas y recruiters en un solo lugar, sin dobles candidaturas."
     />
-    <meta
-      name="keywords"
-      content="ATS, recruitment software, agencias de reclutamiento, software de reclutamiento, gestión de candidatos, applicant tracking, recruiter tools, requisiciones, entrevistas, multi-tenant ATS, ATS para agencias, coordinación de candidatos"
-    />
+    <link rel="canonical" href="https://candy-store.app/" />
+    <meta name="theme-color" content="#0b0b0f" />
+    <meta name="color-scheme" content="dark" />
 
-    <!-- Schema.org -->
-    <meta
-      itemprop="description"
-      content="Simplifica la coordinación de candidatos y entrevistas. ATS diseñado para agencias medianas de reclutamiento (5-30 recruiters). Gestioná requisiciones, candidatos e interviews en un solo lugar."
-    />
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Candy Store - ATS para Agencias de Reclutamiento" />
+    <meta name="twitter:title" content="Candy Store — ATS para agencias de reclutamiento" />
     <meta
       name="twitter:description"
-      content="Gestión de candidatos e entrevistas sin herramientas fragmentadas. Diseñado para agencias medianas de reclutamiento."
+      content="Gestión de candidatos, requisiciones y entrevistas sin herramientas fragmentadas. Diseñado para agencias medianas de reclutamiento."
     />
 
-    <!-- Open Graph -->
     <meta property="og:site_name" content="Candy Store" />
-    <meta property="og:title" content="Candy Store - Software de Reclutamiento para Agencias" />
+    <meta property="og:title" content="Candy Store — Un ATS para agencias, no para corporaciones" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://home.candy-store.app" />
+    <meta property="og:url" content="https://candy-store.app/" />
     <meta
       property="og:description"
       content="ATS multi-tenant para agencias de reclutamiento. Coordiná candidatos, requisiciones y entrevistas sin fragmentación. Probalo gratis."
     />
 
-    <!-- Web fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Fontawesome -->
-    <link
-      type="text/css"
-      href="./vendor/@fortawesome/fontawesome-free/css/all.min.css"
-      rel="stylesheet"
-    />
-
-    <!-- Pixel CSS -->
-    <link type="text/css" href="./css/neumorphism.css" rel="stylesheet" />
-
-    <style>
-      /* =====================
-         TYPOGRAPHY TOKENS
-         ===================== */
-      :root {
-        /* Fonts */
-        --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
-        --font-body:    'Figtree', system-ui, sans-serif;
-
-        /* Spacing */
-        --space-xs: 0.5rem;
-        --space-sm: 1rem;
-        --space-md: 1.5rem;
-        --space-lg: 3rem;
-        --space-xl: 6rem;
-      }
-
-      /* Base body */
-      body {
-        font-family: var(--font-body);
-        font-size: 1rem;
-        line-height: 1.65;
-      }
-
-      /* All headings use display font */
-      h1, h2, h3, h4, h5, h6,
-      .h1, .h2, .h3, .h4, .h5, .h6 {
-        font-family: var(--font-display);
-        letter-spacing: -0.02em;
-        line-height: 1.1;
-      }
-
-      /* Hero headline — fluid, assertive */
-      .display-2 {
-        font-size: clamp(2rem, 5.5vw, 3.75rem) !important;
-        font-weight: 700;
-        letter-spacing: -0.03em;
-        line-height: 1.05;
-      }
-
-      /* Section h1 equivalents */
-      .h1 {
-        font-size: clamp(1.75rem, 3.5vw, 2.375rem) !important;
-        font-weight: 700;
-      }
-
-      /* Section h2 */
-      h2:not(.h1):not(.h2-sm),
-      .h2 {
-        font-size: clamp(1.375rem, 2.5vw, 1.75rem) !important;
-        font-weight: 700;
-      }
-
-      /* h5 labels — feature titles */
-      .h5 {
-        font-size: 1rem !important;
-        font-weight: 600;
-        letter-spacing: -0.01em;
-      }
-
-      /* Lead paragraphs */
-      .lead {
-        font-family: var(--font-body);
-        font-size: clamp(1rem, 1.5vw, 1.125rem);
-        line-height: 1.7;
-        font-weight: 400;
-      }
-
-      /* Body text max-width for readability */
-      .text-gray,
-      p.mb-0,
-      .card-body p {
-        max-width: 60ch;
-        line-height: 1.65;
-      }
-
-      /* Feature numbers — display font */
-      .feature-number {
-        font-family: var(--font-display);
-        font-weight: 700;
-      }
-
-      /* Navbar brand — display font, override neumorphism uppercase */
-      .navbar-brand {
-        font-family: var(--font-display);
-        font-weight: 700;
-        letter-spacing: -0.03em;
-        font-size: 1.25rem;
-        text-transform: none;
-      }
-
-      /* Footer text */
-      footer p, footer a {
-        font-family: var(--font-body);
-        font-size: 0.9375rem;
-      }
-      footer h5 {
-        font-size: 0.875rem !important;
-        font-weight: 600;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-      }
-
-      /* Base section — reduce neumorphism's 3rem default */
-      .section {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-      }
-
-      /* Override .section-lg: neumorphism define 8rem en ≥576px */
-      .section-lg {
-        padding-top: 2.5rem !important;
-        padding-bottom: 2.5rem !important;
-      }
-
-      /* Hero: fluid padding responsive — min debe superar altura del navbar (~4rem) */
-      .hero-section {
-        padding-top: clamp(7rem, 10vw, 10rem);
-        padding-bottom: clamp(2.5rem, 4vw, 4rem);
-      }
-
-      /* Feature list: horizontal numbered items */
-      .feature-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .feature-list-item {
-        display: flex;
-        gap: 1.5rem;
-        align-items: flex-start;
-        padding: 1.25rem 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-      }
-
-      .feature-list-item:last-child {
-        border-bottom: none;
-      }
-
-      .feature-list-item .icon {
-        flex-shrink: 0;
-        margin-top: 0.125rem;
-      }
-
-      .feature-number {
-        display: block;
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        opacity: 0.35;
-        margin-bottom: 0.35rem;
-      }
-
-      /* CTA cards: button aligned right on md+ */
-      .cta-card-body {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-      }
-
-      .cta-card-text {
-        flex: 1 1 300px;
-      }
-
-      .cta-card-action {
-        flex: 0 0 auto;
-      }
-
-      /* Footer columns balance */
-      .footer-brand-col {
-        max-width: 36ch;
-      }
-
-      /* Trust reducer below hero CTA */
-      .hero-trust-note {
-        font-size: 0.85rem;
-        opacity: 0.6;
-        margin-top: 0.75rem;
-        margin-bottom: 0;
-      }
-
-      /* Pricing price anchor */
-      .price-anchor {
-        font-size: 0.9375rem;
-      }
-
-      /* =====================
-         ANIMATIONS
-         ===================== */
-
-      /* Easing tokens */
-      :root {
-        --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
-        --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      /* Keyframes */
-      @keyframes cs-fade-up {
-        from { opacity: 0; transform: translateY(22px); }
-        to   { opacity: 1; transform: translateY(0); }
-      }
-
-      /* Hero entrance — fires on page load, staggered */
-      .hero-section h1 {
-        animation: cs-fade-up 0.65s var(--ease-out-expo) 0.05s both;
-      }
-      .hero-section .lead {
-        animation: cs-fade-up 0.65s var(--ease-out-expo) 0.20s both;
-      }
-      .hero-section .btn-lg {
-        animation: cs-fade-up 0.65s var(--ease-out-expo) 0.36s both;
-      }
-      .hero-section .hero-trust-note {
-        animation: cs-fade-up 0.55s var(--ease-out-quart) 0.50s both;
-      }
-
-      /* Scroll-reveal base */
-      .reveal {
-        opacity: 0;
-        transform: translateY(18px);
-        transition:
-          opacity   0.6s var(--ease-out-quart),
-          transform 0.6s var(--ease-out-quart);
-      }
-      .reveal.is-visible {
-        opacity: 1;
-        transform: none;
-      }
-      .reveal[data-delay="1"] { transition-delay: 0.12s; }
-      .reveal[data-delay="2"] { transition-delay: 0.24s; }
-
-      /* Feature list — staggered on scroll */
-      .feature-list .feature-list-item {
-        opacity: 0;
-        transform: translateY(14px);
-        transition:
-          opacity   0.5s var(--ease-out-quart),
-          transform 0.5s var(--ease-out-quart);
-      }
-      .feature-list.is-visible .feature-list-item:nth-child(1) {
-        opacity: 1; transform: none;
-        transition-delay: 0ms;
-      }
-      .feature-list.is-visible .feature-list-item:nth-child(2) {
-        opacity: 1; transform: none;
-        transition-delay: 120ms;
-      }
-      .feature-list.is-visible .feature-list-item:nth-child(3) {
-        opacity: 1; transform: none;
-        transition-delay: 240ms;
-      }
-
-      /* Button micro-interactions */
-      .btn {
-        transition:
-          transform   0.15s var(--ease-out-quart),
-          box-shadow  0.15s var(--ease-out-quart) !important;
-      }
-      .btn:hover {
-        transform: translateY(-2px) scale(1.02);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.13) !important;
-      }
-      .btn:active {
-        transform: scale(0.97) !important;
-        transition-duration: 0.07s !important;
-      }
-
-      /* Feature icon hover rotate */
-      .feature-list-item .icon {
-        transition: transform 0.28s var(--ease-out-quart);
-      }
-      .feature-list-item:hover .icon {
-        transform: scale(1.12) rotate(6deg);
-      }
-
-      /* Card hover lift */
-      .card.shadow-soft {
-        transition:
-          box-shadow 0.25s var(--ease-out-quart),
-          transform  0.25s var(--ease-out-quart);
-      }
-      .card.shadow-soft:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.10) !important;
-      }
-
-      /* Touch targets mínimos en mobile */
-      @media (max-width: 991.98px) {
-        .btn {
-          min-height: 44px;
-          display: inline-flex;
-          align-items: center;
-        }
-      }
-
-      /* Reduced motion — always last */
-      @media (prefers-reduced-motion: reduce) {
-        *, *::before, *::after {
-          animation-duration:        0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration:       0.01ms !important;
-          transition-delay:          0ms !important;
-        }
-      }
-    </style>
-
+    <link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="./assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./css/landing.css" />
+    <script>document.documentElement.classList.add("js");</script>
+    <script src="./js/landing.js" defer></script>
   </head>
 
   <body>
-    <header class="header-global">
-      <nav
-        id="navbar-main"
-        aria-label="Primary navigation"
-        class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-light"
-      >
-        <div class="container position-relative">
-          <a
-            class="navbar-brand mr-lg-4"
-            href="./index.html"
-            aria-label="Candy Store — inicio"
-          >
-            Candy Store
-          </a>
-          <div class="navbar-collapse collapse" id="navbar_global">
-          </div>
-          <div class="d-flex align-items-center">
-            <a
-              href="https://admin.candy-store.app/login"
-              target="_blank"
-              class="btn btn-soft mr-2 d-none d-lg-inline-flex"
-              >Iniciar sesión</a
-            >
-            <a
-              href="https://admin.candy-store.app/register"
-              target="_blank"
-              class="btn btn-primary"
-              >Prueba Gratis</a
-            >
-          </div>
+    <a class="skip" href="#contenido">Saltar al contenido</a>
+
+    <header class="nav" id="top">
+      <nav class="wrap nav__inner" aria-label="Principal">
+        <a class="brand" href="./" aria-label="Candy Store, inicio">
+          <span class="brand__mark" aria-hidden="true"></span>Candy Store
+        </a>
+        <div class="nav__links">
+          <a class="nav__link" href="https://admin.candy-store.app/login">Iniciar sesión</a>
+          <a class="btn btn--small" href="https://admin.candy-store.app/register">Prueba gratis</a>
         </div>
       </nav>
     </header>
-    
-    <main>
-      <!-- Hero -->
-      <div class="section bg-soft overflow-hidden hero-section">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-lg-7">
-              <h1 class="display-2 mb-4">Un ATS para Agencias,<br>no para Corporaciones</h1>
-              <p class="lead mb-5">
-                Coordiná múltiples búsquedas, candidatos y recruiters en un único dashboard.
-                Sin hojas de cálculo, sin Slack desorganizado, sin dobles candidaturas.
-              </p>
-              <a class="btn btn-primary btn-lg" href="https://admin.candy-store.app/register" target="_blank">
-                <span class="fas fa-rocket mr-2"></span>Comenzar Prueba Gratis
-              </a>
-              <p class="hero-trust-note">
-                Sin tarjeta de crédito &middot; Setup en menos de 5 minutos
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Features -->
-      <section class="section section-lg">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-12 col-lg-9">
-              <ul class="feature-list" data-scroll-reveal="stagger">
-                <li class="feature-list-item">
-                  <div class="icon icon-shape shadow-soft border border-light rounded-circle">
-                    <span class="fas fa-users"></span>
-                  </div>
-                  <div>
-                    <span class="feature-number">01</span>
-                    <h3 class="h5 mb-2">Candidatos sin duplicados</h3>
-                    <p class="text-gray mb-0">
-                      Un perfil único por candidato, visible para todo el equipo.
-                      Nunca más dos recruiters trabajando la misma persona sin saberlo.
-                    </p>
-                  </div>
-                </li>
-                <li class="feature-list-item">
-                  <div class="icon icon-shape shadow-soft border border-light rounded-circle">
-                    <span class="fas fa-briefcase"></span>
-                  </div>
-                  <div>
-                    <span class="feature-number">02</span>
-                    <h3 class="h5 mb-2">Requisiciones centralizadas</h3>
-                    <p class="text-gray mb-0">
-                      Cada búsqueda tiene su cliente, su equipo asignado y su historial completo.
-                      Sin hojas de cálculo paralelas, sin versiones desactualizadas.
-                    </p>
-                  </div>
-                </li>
-                <li class="feature-list-item">
-                  <div class="icon icon-shape shadow-soft border border-light rounded-circle">
-                    <span class="fas fa-calendar-check"></span>
-                  </div>
-                  <div>
-                    <span class="feature-number">03</span>
-                    <h3 class="h5 mb-2">Entrevistas trazables</h3>
-                    <p class="text-gray mb-0">
-                      Cada entrevista con su feedback documentado y firmado por el recruiter.
-                      El historial queda en el perfil, no en un Slack que nadie vuelve a leer.
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
+    <main id="contenido">
+      <section class="hero wrap">
+        <p class="eyebrow">ATS para agencias de reclutamiento</p>
+        <h1>Un ATS para agencias.<br /><span class="dim">No para corporaciones.</span></h1>
+        <p class="lede">
+          Coordiná búsquedas, candidatos y recruiters en un solo lugar. Sin hojas de cálculo, sin Slack
+          desorganizado, sin dobles candidaturas.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="https://admin.candy-store.app/register">Comenzar prueba gratis</a>
+          <a class="btn btn--ghost" href="mailto:hola@candy-store.app?subject=Demo%20de%20Candy%20Store">Agendá una demo</a>
         </div>
+        <p class="fineprint">Sin tarjeta de crédito · Setup en menos de 5 minutos</p>
       </section>
 
-      <!-- Pricing -->
-      <section class="section section-lg">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-12 col-lg-9 text-center reveal">
-              <div class="card bg-soft shadow-soft border-light p-4">
-                <div class="card-body">
-                  <h2 class="h2 mb-3">Precio por seat. Sin sorpresas.</h2>
-                  <p class="lead text-gray mb-2">
-                    Sin contratos anuales. Sin licencias por módulo.
-                    Adaptamos el plan al tamaño de tu agencia.
-                  </p>
-                  <p class="text-gray mb-4 price-anchor">
-                    Una agencia de 10 recruiters paga alrededor de <strong>U$D 15–25 por seat/mes</strong>.
-                    Hablanos y armamos una propuesta en 24 hs.
-                  </p>
-                  <a href="mailto:hola@candy-store.app" class="btn btn-primary btn-lg">
-                    <span class="fas fa-envelope mr-2"></span>Pedí tu cotización
-                  </a>
-                </div>
+      <div class="stage">
+        <div class="window" role="img" aria-label="Vista de la app: listado de candidatos con su búsqueda, etapa y recruiter asignado">
+          <div class="window__bar" aria-hidden="true">
+            <span class="window__dot"></span><span class="window__dot"></span><span class="window__dot"></span>
+            <span class="window__url">tu-agencia.candy-store.app/candidatos</span>
+          </div>
+          <div class="window__body" aria-hidden="true">
+            <div class="sidebar">
+              <span class="is-active">Candidatos</span>
+              <span>Requisiciones</span>
+              <span>Entrevistas</span>
+              <span>Equipo</span>
+            </div>
+            <div class="panel">
+              <div class="panel__head">
+                <span class="panel__title">Candidatos</span>
+                <span class="panel__meta">48 activos · 6 búsquedas</span>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      <div class="section section-lg">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-12 col-lg-10 reveal">
-              <div class="card bg-primary shadow-soft border-light px-4 py-4">
-                <div class="cta-card-body">
-                  <div class="cta-card-text">
-                    <h2 class="mb-3">¿Listo para simplificar tu operación?</h2>
-                    <p class="mb-0">
-                      Sumá tu agencia a Candy Store y coordiná candidatos, entrevistas y
-                      requisiciones desde un solo lugar. Sin overhead, sin fragmentación.
-                    </p>
-                  </div>
-                  <div class="cta-card-action">
-                    <a href="https://admin.candy-store.app/register" target="_blank" class="btn btn-primary btn-lg">
-                      <span class="fas fa-rocket mr-2"></span>Comenzar Gratis
-                    </a>
-                  </div>
+              <div class="table">
+                <div class="table__grid">
+                  <div class="row row--head"><span>Candidato</span><span>Búsqueda</span><span>Etapa</span><span>Asignado</span></div>
+                  <div class="row"><span class="name">Lucía Fernández</span><span class="muted">Data Analyst Sr</span><span><span class="pill">Técnica</span></span><span>Martina R.</span></div>
+                  <div class="row"><span class="name">Tomás Aguirre</span><span class="muted">Product Designer</span><span><span class="pill">Screening</span></span><span class="none">Sin asignar</span></div>
+                  <div class="row"><span class="name">Camila Ortiz</span><span class="muted">Backend Node</span><span><span class="pill pill--ok">Oferta</span></span><span>Julián P.</span></div>
+                  <div class="row"><span class="name">Federico Sosa</span><span class="muted">Data Analyst Sr</span><span><span class="pill">Cliente</span></span><span>Martina R.</span></div>
+                  <div class="row"><span class="name">Valentina Ruiz</span><span class="muted">QA Automation</span><span><span class="pill">Screening</span></span><span>Julián P.</span></div>
                 </div>
               </div>
             </div>
@@ -529,165 +100,136 @@
         </div>
       </div>
 
-      <!-- Section -->
-      <section class="section section-lg">
-        <div class="container">
-          <div class="row align-items-center justify-content-around">
-            <div class="col-md-6 col-xl-6 mb-4 mb-md-0 reveal">
-              <div
-                class="card bg-primary shadow-soft border-light organic-radius p-3"
-              >
-                <img
-                  class="organic-radius img-fluid"
-                  src="./assets/img/about-us-1.jpg"
-                  alt="Equipo de reclutamiento trabajando en una agencia moderna"
-                />
-              </div>
-            </div>
-            <div class="col-md-6 col-xl-6 text-center text-md-left reveal" data-delay="1">
-              <h2 class="h1 mb-4">Tu equipo, tus búsquedas, una sola vista.</h2>
-              <p class="lead">
-                Candy Store nació para agencias que manejan 10 o más búsquedas simultáneas
-                con equipos que comparten candidatos. Sin un lugar central, la coordinación se rompe.
-              </p>
-              <p class="lead">
-                Cada búsqueda tiene su historia. Cada candidato, su perfil único.
-                Cada entrevista, su feedback documentado y trazable.
-              </p>
-            </div>
-          </div>
-        </div>
+      <section class="wrap statement" aria-label="El problema">
+        <p class="line">Dos recruiters.</p>
+        <p class="line">El mismo candidato.</p>
+        <p class="line line--accent">Nadie se enteró.</p>
+        <p class="body rv">
+          Candy Store nació para agencias que manejan 10 o más búsquedas simultáneas con equipos que comparten
+          candidatos. Sin un lugar central, la coordinación se rompe.
+        </p>
       </section>
-      <!-- Contacto -->
-      <div class="section section-lg">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-12 col-lg-10 reveal">
-              <div class="card bg-primary shadow-soft border-light">
-                <div class="card-body px-4 py-4">
-                  <div class="cta-card-body">
-                    <div class="cta-card-text">
-                      <h2 class="mb-2">¿Querés ver el producto antes de registrarte?</h2>
-                      <p class="mb-0">
-                        Te hacemos una demo de 20 minutos adaptada al flujo de tu agencia.
-                        Sin pitch, sin presión — solo el producto.
-                      </p>
-                    </div>
-                    <div class="cta-card-action">
-                      <a href="mailto:hola@candy-store.app" class="btn btn-primary btn-lg">
-                        <span class="fas fa-calendar mr-2"></span>Agendá una demo
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
 
-    <footer class="d-flex pb-4 pt-4 border-top border-light bg-primary">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 footer-brand-col">
+      <div class="wrap features" id="producto">
+        <section class="feature">
+          <div class="feature__copy rv">
+            <p class="feature__num">01</p>
+            <h2>Candidatos sin duplicados.</h2>
             <p>
-              <strong>Candy Store</strong> es el ATS diseñado para agencias de reclutamiento medianas.
-              Coordiná candidatos, requisiciones y entrevistas desde un solo lugar.
+              Un perfil único por candidato, visible para todo el equipo. Cada uno sabe quién lo tiene y puede
+              tomarlo o pasarlo sin pisarse.
             </p>
           </div>
-          <div class="col-6 col-lg-2 mb-3 mb-lg-0">
-            <h5>Producto</h5>
-            <ul class="footer-links list-unstyled mt-2">
-              <li class="mb-1">
-                <a
-                  class="p-2"
-                  target="_blank"
-                  href="https://admin.candy-store.app/register"
-                  >Prueba Gratis</a
-                >
-              </li>
-              <li class="mb-1">
-                <a
-                  class="p-2"
-                  target="_blank"
-                  href="https://admin.candy-store.app/login"
-                  >Iniciar sesión</a
-                >
-              </li>
-              <li>
-                <a
-                  class="p-2"
-                  href="mailto:hola@candy-store.app"
-                  >Contacto</a
-                >
-              </li>
-            </ul>
+          <div class="card rv" style="--d: 0.12s" aria-hidden="true">
+            <div class="person">
+              <span class="avatar">LF</span>
+              <span><span class="person__name">Lucía Fernández</span><span class="person__meta">Data Analyst Sr · 3 búsquedas</span></span>
+            </div>
+            <div class="owner"><span>Lo tiene <strong>Martina R.</strong> desde el lunes</span><span class="owner__tag">Asignado</span></div>
+            <div class="fake-btns"><span class="fake-btn fake-btn--solid">Tomar candidato</span><span class="fake-btn">Pasar a…</span></div>
           </div>
-        </div>
-        <hr class="my-3" />
-        <div class="row">
-          <div class="col">
-            <div
-              class="d-flex text-center justify-content-center align-items-center"
-              role="contentinfo"
-            >
-              <p class="font-weight-normal font-small mb-0">
-                © Candy Store <span class="current-year">2026</span>. Todos los derechos reservados.
-              </p>
+        </section>
+
+        <section class="feature feature--flip">
+          <div class="card rv" style="--d: 0.12s" aria-hidden="true">
+            <div class="req__head"><span>Backend Node Semi Sr</span><span class="pill pill--ok">Abierta</span></div>
+            <div class="stats">
+              <div class="stat"><p class="stat__label">Cliente</p><p class="stat__value">Empresa cliente</p></div>
+              <div class="stat"><p class="stat__label">Equipo</p><p class="stat__value">2 recruiters</p></div>
+              <div class="stat"><p class="stat__label">Candidatos</p><p class="stat__value">14</p></div>
+            </div>
+            <div class="activity">
+              <span>Hoy · Julián P. sumó a Camila Ortiz</span>
+              <span>Ayer · Martina R. actualizó el perfil del puesto</span>
             </div>
           </div>
+          <div class="feature__copy rv">
+            <p class="feature__num">02</p>
+            <h2>Cada búsqueda, en un solo lugar.</h2>
+            <p>
+              Cada requisición tiene su cliente, su equipo asignado y su historial completo. Sin hojas de cálculo
+              paralelas, sin versiones desactualizadas.
+            </p>
+          </div>
+        </section>
+
+        <section class="feature">
+          <div class="feature__copy rv">
+            <p class="feature__num">03</p>
+            <h2>Entrevistas que dejan rastro.</h2>
+            <p>
+              Cada entrevista con su etapa y su feedback firmado por el recruiter. El historial queda en el perfil,
+              no en un Slack que nadie vuelve a leer.
+            </p>
+          </div>
+          <div class="card rv" style="--d: 0.12s" aria-hidden="true">
+            <div class="stages">
+              <span class="stage-pill">Screening</span>
+              <span class="stage-pill">Técnica</span>
+              <span class="stage-pill stage-pill--current">Cliente</span>
+              <span class="stage-pill stage-pill--next">Oferta</span>
+            </div>
+            <div class="quote">
+              <p>“Muy sólida en SQL y modelado. Recomiendo avanzar con el cliente; ojo con la expectativa salarial.”</p>
+              <p>Martina R. · Entrevista técnica · 3 de octubre</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class="wrap pricing" aria-labelledby="precio">
+        <div class="pricing__box rv">
+          <div class="pricing__copy">
+            <h2 id="precio">Precio por seat.<br />Sin sorpresas.</h2>
+            <p>Sin contratos anuales. Sin licencias por módulo. Adaptamos el plan al tamaño de tu agencia.</p>
+          </div>
+          <div class="pricing__num">
+            <span class="price">U$D 15–25</span>
+            <span class="price__note">por seat / mes, en una agencia de 10 recruiters</span>
+            <a class="text-link" href="mailto:hola@candy-store.app?subject=Cotizaci%C3%B3n%20Candy%20Store">Pedí tu cotización en 24 hs ›</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing" aria-labelledby="cierre">
+        <h2 id="cierre" class="rv">Tu equipo, tus búsquedas.<br /><span>Una sola vista.</span></h2>
+        <div class="btn-row rv" style="--d: 0.1s">
+          <a class="btn btn--primary" href="https://admin.candy-store.app/register">Comenzar prueba gratis</a>
+          <a class="btn btn--ghost" href="mailto:hola@candy-store.app?subject=Demo%20de%20Candy%20Store">Agendá una demo de 20 minutos</a>
+        </div>
+        <p class="fineprint">Sin pitch, sin presión — solo el producto.</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer__top">
+        <div class="footer__intro">
+          <a class="brand" href="./"><span class="brand__mark" aria-hidden="true"></span>Candy Store</a>
+          <p>El ATS para agencias de reclutamiento medianas. Coordiná candidatos, requisiciones y entrevistas desde un solo lugar.</p>
+          <a class="footer__mail" href="mailto:hola@candy-store.app">hola@candy-store.app <span aria-hidden="true">→</span></a>
+        </div>
+        <nav class="footer__cols" aria-label="Pie de página">
+          <div class="footer__col">
+            <p class="footer__h">Producto</p>
+            <a href="#producto">Cómo funciona</a>
+            <a href="#precio">Precio</a>
+            <a href="https://admin.candy-store.app/register">Prueba gratis</a>
+            <a href="https://admin.candy-store.app/login">Iniciar sesión</a>
+          </div>
+          <div class="footer__col">
+            <p class="footer__h">Hablemos</p>
+            <a href="mailto:hola@candy-store.app?subject=Demo%20de%20Candy%20Store">Agendá una demo</a>
+            <a href="mailto:hola@candy-store.app?subject=Cotizaci%C3%B3n%20Candy%20Store">Pedí una cotización</a>
+            <a href="mailto:hola@candy-store.app">Contacto</a>
+          </div>
+        </nav>
+      </div>
+      <div class="wrap">
+        <div class="footer__bottom">
+          <span>© 2026 Candy Store</span>
+          <a class="totop" href="#top">Volver arriba <span aria-hidden="true">↑</span></a>
         </div>
       </div>
     </footer>
-
-    <!-- Core -->
-    <script src="./vendor/jquery/dist/jquery.min.js"></script>
-    <script src="./vendor/popper.js/dist/umd/popper.min.js"></script>
-    <script src="./vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="./vendor/headroom.js/dist/headroom.min.js"></script>
-
-    <!-- Vendor JS -->
-    <script src="./vendor/onscreen/dist/on-screen.umd.min.js"></script>
-    <script src="./vendor/nouislider/distribute/nouislider.min.js"></script>
-    <script src="./vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-    <script src="./vendor/waypoints/lib/jquery.waypoints.min.js"></script>
-    <script src="./vendor/jarallax/dist/jarallax.min.js"></script>
-    <script src="./vendor/jquery.counterup/jquery.counterup.min.js"></script>
-    <script src="./vendor/jquery-countdown/dist/jquery.countdown.min.js"></script>
-    <script src="./vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-    <!-- Neumorphism JS -->
-    <script src="./assets/js/neumorphism.js"></script>
-
-    <!-- Scroll-reveal animations -->
-    <script>
-      (function () {
-        var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        // Feature list stagger
-        var featureLists = document.querySelectorAll('[data-scroll-reveal="stagger"]');
-        // Plain reveal elements
-        var revealEls = document.querySelectorAll('.reveal');
-
-        if (prefersReducedMotion) {
-          // Immediately show everything, no transitions
-          featureLists.forEach(function (el) { el.classList.add('is-visible'); });
-          revealEls.forEach(function (el) { el.classList.add('is-visible'); });
-          return;
-        }
-
-        var observer = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-        featureLists.forEach(function (el) { observer.observe(el); });
-        revealEls.forEach(function (el) { observer.observe(el); });
-      })();
-    </script>
   </body>
 </html>
